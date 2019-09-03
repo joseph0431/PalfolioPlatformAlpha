@@ -1,6 +1,5 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
-const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const app = express();
@@ -27,10 +26,9 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars')
 
 // Body parser middleware
-app.use(bodyParser.urlencoded({
+app.use(express.urlencoded({
 	extended: false
 }))
-app.use(bodyParser.json())
 
 
 // Index Route
